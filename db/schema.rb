@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_13_221629) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_13_222308) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_13_221629) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["integer_b"], name: "index_integer_tables_on_integer_b"
+  end
+
+  create_table "string_tables", force: :cascade do |t|
+    t.string "string_a"
+    t.string "string_b"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["string_b"], name: "index_string_tables_on_string_b"
   end
 
 end

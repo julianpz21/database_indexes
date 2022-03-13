@@ -1,0 +1,2 @@
+class StringTable < ApplicationRecord
+end
