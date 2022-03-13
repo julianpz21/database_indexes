@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_13_215728) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_13_221629) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "date_tables", force: :cascade do |t|
+    t.date "date_a"
+    t.date "date_b"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["date_b"], name: "index_date_tables_on_date_b"
+  end
 
   create_table "integer_tables", force: :cascade do |t|
     t.integer "integer_a"
