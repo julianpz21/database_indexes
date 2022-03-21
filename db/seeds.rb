@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+1000000.times do
+  value = rand(1000000)
+  IntegerTable.create(integer_a: value, integer_b: value)
+end
+puts 'IntegerTable created'
+
+1000000.times do
+  date = Date.current - rand(100000)
+  DateTable.create(date_a: date, date_b: date)
+end
+puts 'DateTable created'
+
+1000000.times do
+  sentence = Faker::Lorem.sentence(word_count: 3)
+  StringTable.create(string_a: sentence, string_b: sentence)
+end
+puts 'StringTable created'

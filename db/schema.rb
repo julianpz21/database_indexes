@@ -37,5 +37,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_13_222308) do
     t.datetime "updated_at", null: false
     t.index ["string_b"], name: "index_string_tables_on_string_b"
   end
-
 end
