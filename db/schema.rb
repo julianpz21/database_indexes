@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_13_222308) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_28_172321) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "array_tables", force: :cascade do |t|
+    t.integer "array_a", array: true
+    t.integer "array_b", array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["array_b"], name: "index_array_tables_on_array_b", using: :gin
+  end
 
   create_table "date_tables", force: :cascade do |t|
     t.date "date_a"
@@ -37,4 +45,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_13_222308) do
     t.datetime "updated_at", null: false
     t.index ["string_b"], name: "index_string_tables_on_string_b"
   end
+
 end

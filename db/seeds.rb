@@ -23,3 +23,9 @@ puts 'DateTable created'
   StringTable.create(string_a: sentence, string_b: sentence)
 end
 puts 'StringTable created'
+
+1000000.times do
+  array = Array.new(4) { rand(10000) }
+  ArrayTable.create(array_a: array, array_b: array)
+end
+puts 'ArrayTable created'
