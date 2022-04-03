@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project provides you a setup of tables to be able to test and analyze the types of indexes and what uses they can have.
 
-Things you may want to cover:
+This project was built with ruby 3, rails 7.0.2, and PostgreSQL database.
 
-* Ruby version
+## To run the project execute the following:
 
-* System dependencies
+* bundle install
 
-* Configuration
+Note: please change config/database.yml.example by config/database.yml and configure your correct "username" and "password".
+* rails db:create
+* rails db:migrate
 
-* Database creation
+Note: please check db/seeds.rb file to configure seeds.
+* rails db:seed
 
-* Database initialization
+## please review the migration files to understand how the indexes were created
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
