@@ -1,0 +1,2 @@
+class CombiningIndexTable < ApplicationRecord
+end

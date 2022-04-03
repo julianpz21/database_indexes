@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_28_172321) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_03_174717) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_28_172321) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["array_b"], name: "index_array_tables_on_array_b", using: :gin
+  end
+
+  create_table "combining_index_tables", force: :cascade do |t|
+    t.integer "integer_a"
+    t.integer "integer_b"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["integer_a"], name: "index_combining_index_tables_on_integer_a"
+    t.index ["integer_b"], name: "index_combining_index_tables_on_integer_b"
   end
 
   create_table "date_tables", force: :cascade do |t|
@@ -36,6 +45,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_28_172321) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["integer_b"], name: "index_integer_tables_on_integer_b"
+  end
+
+  create_table "multicolumn_index_tables", force: :cascade do |t|
+    t.integer "integer_a"
+    t.integer "integer_b"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["integer_a", "integer_b"], name: "index_multicolumn_index_tables_on_integer_a_and_integer_b"
+  end
+
+  create_table "simple_tables", force: :cascade do |t|
+    t.integer "integer_a"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["integer_a"], name: "index_simple_tables_on_integer_a"
   end
 
   create_table "string_tables", force: :cascade do |t|

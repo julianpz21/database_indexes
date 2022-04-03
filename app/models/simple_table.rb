@@ -1,0 +1,2 @@
+class SimpleTable < ApplicationRecord
+end
