@@ -6,6 +6,5 @@ class CreateMulticolumnIndexTables < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    add_index :multicolumn_index_tables, %i[integer_a integer_b]
   end
 end

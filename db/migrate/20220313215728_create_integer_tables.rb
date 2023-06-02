@@ -6,6 +6,5 @@ class CreateIntegerTables < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    add_index :integer_tables, :integer_b
   end
 end

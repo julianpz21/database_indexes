@@ -6,7 +6,5 @@ class CreateCombiningIndexTables < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    add_index :combining_index_tables, :integer_a
-    add_index :combining_index_tables, :integer_b
   end
 end

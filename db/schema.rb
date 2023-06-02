@@ -10,8 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_03_174717) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_02_212106) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_trgm"
   enable_extension "plpgsql"
 
   create_table "array_tables", force: :cascade do |t|
@@ -65,9 +66,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_03_174717) do
   create_table "string_tables", force: :cascade do |t|
     t.string "string_a"
     t.string "string_b"
+    t.string "string_c"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["string_b"], name: "index_string_tables_on_string_b"
+    t.index ["string_c"], name: "index_string_tables_on_string_c", opclass: :gin_trgm_ops, using: :gin
   end
 
 end

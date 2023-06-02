@@ -6,6 +6,5 @@ class CreateDateTables < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    add_index :date_tables, :date_b
   end
 end

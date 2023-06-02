@@ -6,6 +6,5 @@ class CreateArrayTables < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    add_index :array_tables, :array_b, using: 'gin'
   end
 end
