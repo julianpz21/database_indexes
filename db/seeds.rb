@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 #   select the number of database rows and uncomment the seeds you want to test
-database_rows = 100000
+database_rows = 800000
 
 database_rows.times do
   value = rand(100000)
